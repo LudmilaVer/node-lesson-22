@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const stringUtils_1 = require("../src/utils/stringUtils");
+console.log((0, stringUtils_1.capitalize)('Welcome to Hell')); 
+console.log((0, stringUtils_1.reverseString)('Welcome to Hell')); 
+const finance_1 = require("../src/finance/finance");
+const loanPayment = finance_1.Finance.LoanCalculator.calculateLoanPayment(700000, 7, 77);
+const taxAmount = finance_1.Finance.TaxCalculator.calculateTax(70000, 10);
+console.log(`Ежемесячный платеж по кредиту: ${loanPayment}`);
+console.log(`Налог на доход: ${taxAmount}`);
+const userManagement_1 = require("../src/user/userManagement");
+const admin = new userManagement_1.UserManagement.Admin.AdminUser('Ludmila Verbitskaya', 'gelmut84@gmail.com', false);
+admin.changeAccessLevel(true);
+console.log(`Admin is super admin: ${admin.isSuperAdmin}`);
